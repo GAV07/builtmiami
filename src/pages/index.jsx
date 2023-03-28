@@ -3,15 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { Client } from '@/lib/contentful'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
+
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -24,6 +20,39 @@ import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
+
+
+// Additional homepage sections
+import { Author } from '@/components/home/Author'
+import { FreeChapters } from '@/components/home/FreeChapters'
+import { NavBar } from '@/components/home/NavBar'
+import { Pricing } from '@/components/home/Pricing'
+import { Resources } from '@/components/home/Resources'
+import { Screencasts } from '@/components/home/Screencasts'
+import { TableOfContents } from '@/components/home/TableOfContents'
+import { Testimonial } from '@/components/home/Testimonial'
+import { Testimonials } from '@/components/home/Testimonials'
+import avatarImage1 from '@/images/primer/avatars/avatar-1.png'
+import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
+
+
+
+export async function getStaticProps() {
+  if (process.env.NODE_ENV === 'production') {
+    await generateRssFeed()
+  }
+  let check = await console.log("Contentful Entry", Client.getEntry('12EXM10vwyqdjNJYxHoq6X'))
+
+  return {
+    props: {
+      articles: (await getAllArticles())
+        .slice(0, 4)
+        .map(({ component, ...meta }) => meta),
+    },
+  }
+}
+
+
 
 function MailIcon(props) {
   return (
@@ -269,32 +298,10 @@ export default function Home({ articles }) {
             technologies that empower regular people to explore space on their
             own terms.
           </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://linkedin.com"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-          </div>
         </div>
       </Container>
       <Photos />
-      <Container className="mt-24 md:mt-28">
+      {/* <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
@@ -306,21 +313,43 @@ export default function Home({ articles }) {
             <Resume />
           </div>
         </div>
-      </Container>
+      </Container> */}
+      <NavBar />
+      <TableOfContents />
+      <Testimonial
+        id="testimonial-from-tommy-stroman"
+        author={{
+          name: 'Tommy Stroman',
+          role: 'Front-end developer',
+          image: avatarImage1,
+        }}
+      >
+        <p>
+          “I didn’t know a thing about icon design until I read this book. Now I
+          can create any icon I need in no time. Great resource!”
+        </p>
+      </Testimonial>
+      <Screencasts />
+      <Testimonial
+        id="testimonial-from-gerardo-stark"
+        author={{
+          name: 'Gerardo Stark',
+          role: 'Creator of Pandemicons',
+          image: avatarImage2,
+        }}
+      >
+        <p>
+          “I’ve tried to create my own icons in the past but quickly got
+          frustrated and gave up. Now I sell my own custom icon sets online.”
+        </p>
+      </Testimonial>
+      <Resources />
+      <FreeChapters />
+      <Pricing />
+      <Testimonials />
+      <Author />
     </>
   )
 }
 
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
 
-  return {
-    props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
-    },
-  }
-}
