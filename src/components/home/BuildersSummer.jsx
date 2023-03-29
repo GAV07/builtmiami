@@ -28,16 +28,16 @@ const tableOfContents = {
   },
 }
 
-export function TableOfContents() {
+export function BuildersSummer() {
   return (
     <section
-      id="table-of-contents"
-      aria-labelledby="table-of-contents-title"
+      id="builders-summer"
+      aria-labelledby="builders-summer-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="1" id="table-of-contents-title">
-          Table of contents
+        <SectionHeading number="2" id="builders-summer-title">
+          Builders' Summer
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Get a look at all of the content covered in the book. Everything you

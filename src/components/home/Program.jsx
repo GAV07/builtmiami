@@ -90,16 +90,16 @@ function Plan({ name, description, price, features, href, featured }) {
   )
 }
 
-export function Pricing() {
+export function Program() {
   return (
     <section
-      id="pricing"
-      aria-labelledby="pricing-title"
+      id="program"
+      aria-labelledby="program-title"
       className="scroll-mt-14 pt-16 pb-8 sm:scroll-mt-32 sm:pt-20 sm:pb-10 lg:pt-32 lg:pb-16"
     >
       <Container>
-        <SectionHeading number="4" id="pricing-title">
-          Pricing
+        <SectionHeading number="4" id="program-title">
+          Selecting a Program
         </SectionHeading>
         <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
           Pick your package
