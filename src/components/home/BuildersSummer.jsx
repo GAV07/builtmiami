@@ -37,7 +37,7 @@ export function BuildersSummer() {
     >
       <Container>
         <SectionHeading number="2" id="builders-summer-title">
-          Builders' Summer
+          Builders Summer
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Get a look at all of the content covered in the book. Everything you

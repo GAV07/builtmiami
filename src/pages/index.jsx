@@ -12,11 +12,9 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
 
 
-// Additional homepage sections
+// Integrated homepage sections
 import { Author } from '@/components/home/Author'
 import { FreeChapters } from '@/components/home/FreeChapters'
 import { NavBar } from '@/components/home/NavBar'
@@ -32,16 +30,12 @@ import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
 
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
+  
   const home = await Client.getEntries('')
 
   return {
     props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
+      
     },
   }
 }
