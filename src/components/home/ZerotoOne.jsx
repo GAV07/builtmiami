@@ -54,7 +54,7 @@ function PlayIcon(props) {
   )
 }
 
-export function ZerotoOne() {
+export function ZerotoOne({ sprint }) {
   return (
     <section
       id="zero-to-one"
@@ -66,48 +66,32 @@ export function ZerotoOne() {
           Zero to one Sprint
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Over an hour of high quality, step-by-step video content to sharpen
-          your icon design workflow.
+          {sprint.fields.title}
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Learn how to design your very first icons in a series of screencasts
-          that will teach you everything you need to know to go from beginner to
-          pro in just over an hour.
+          {sprint.fields.subtitle}
         </p>
+        <a src="#" className="text-blue-500">Apply Now <span aria-hidden="true">&rarr;</span></a>
       </Container>
       <Container size="lg" className="mt-16">
         <ol
           role="list"
           className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
         >
-          {videos.map((video) => (
-            <li key={video.title} className="[counter-increment:video]">
-              <div
-                className="relative flex h-44 items-center justify-center rounded-2xl px-6 shadow-lg"
-                style={{
-                  backgroundImage:
-                    'conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)',
-                }}
-              >
+          {sprint.fields.cards.map((card) => (
+            <li key={card.fields.title} className="[counter-increment:card]">
+              <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
-                  <Image src={video.image} alt="" unoptimized />
-                </div>
-                <div className="absolute bottom-2 left-2 flex items-center rounded-lg bg-black/30 px-1.5 py-0.5 text-sm text-white [@supports(backdrop-filter:blur(0))]:bg-white/10 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
-                  <PlayIcon className="h-4 w-4 fill-current stroke-current" />
-                  <time
-                    dateTime={`${video.runtime.minutes}m ${video.runtime.seconds}s`}
-                    className="ml-2"
-                  >
-                    {`${video.runtime.minutes}:${video.runtime.seconds
-                      .toString()
-                      .padStart(2, '0')}`}
-                  </time>
+                  <img 
+                    src={card.fields.image.fields.file.url}
+                    
+                  />
                 </div>
               </div>
-              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
-                {video.title}
+              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(card,decimal-leading-zero)]">
+                {card.fields.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-600">{video.description}</p>
+              <p className="mt-2 text-sm text-slate-600">{card.fields.subtitle}</p>
             </li>
           ))}
         </ol>

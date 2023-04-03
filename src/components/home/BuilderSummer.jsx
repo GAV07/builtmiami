@@ -28,7 +28,7 @@ const tableOfContents = {
   },
 }
 
-export function BuildersSummer() {
+export function BuilderSummer({ summer }) {
   return (
     <section
       id="builders-summer"
@@ -40,15 +40,13 @@ export function BuildersSummer() {
           Builders Summer
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Get a look at all of the content covered in the book. Everything you
-          need to know is inside.
+          {summer.fields.title}
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          “Everything Starts as a Square” is comprised of 240 tightly edited,
-          highly visual pages designed to teach you everything you need to know
-          about icon design with no unnecessary filler.
+          {summer.fields.subtitle}
         </p>
-        <Expandable>
+        <p className="mt-3">*Schedule dropping soon</p>
+        {/* <Expandable>
           {({ isExpanded }) => (
             <>
               <ol role="list" className="mt-16 space-y-10 sm:space-y-16">
@@ -90,7 +88,7 @@ export function BuildersSummer() {
               <Expandable.Button>See more</Expandable.Button>
             </>
           )}
-        </Expandable>
+        </Expandable> */}
       </Container>
     </section>
   )

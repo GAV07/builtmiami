@@ -57,46 +57,45 @@ const resources = [
   },
 ]
 
-export function Accelerator() {
+export function Accelerator({ accelerator }) {
   return (
     <section
       id="accelerator"
       aria-labelledby="accelerator-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
+      {console.log(accelerator)}
       <Container>
         <SectionHeading number="3" id="accelerator-title">
-          Accelerator
+          {accelerator.fields.lead}
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Tools and resources you can use to get started even faster and
-          progress even further.
+          {accelerator.fields.title}
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Design assets, icon teardowns, and a community of fellow icon
-          designers where you can ask questions, get feedback, and accelerate
-          your learning.
+          {accelerator.fields.subtitle}
         </p>
+        <a src="#" className="text-blue-500">Apply Now <span aria-hidden="true">&rarr;</span></a>
       </Container>
       <Container size="lg" className="mt-16">
         <ol
           role="list"
           className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
         >
-          {resources.map((resource) => (
+          {accelerator.fields.cards.map((resource) => (
             <li
-              key={resource.title}
+              key={resource.fields.title}
               className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
             >
               <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
-                <resource.image />
+                <img src={resource.fields.image.fields.file.url} />
               </div>
               <div>
                 <h3 className="text-base font-medium tracking-tight text-slate-900">
-                  {resource.title}
+                  {resource.fields.title}
                 </h3>
                 <p className="mt-2 text-sm text-slate-600">
-                  {resource.description}
+                  {resource.fields.subtitle}
                 </p>
               </div>
             </li>

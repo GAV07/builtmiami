@@ -14,8 +14,8 @@ const sections = [
     ),
   },
   { id: 'builders-summer', title: 'Builders Summer' },
-  { id: 'accelerator', title: 'Accelerator' },
-  { id: 'program', title: 'Selecting a Program' }
+  { id: 'accelerator', title: 'Accelerator' }
+  // { id: 'program', title: 'Selecting a Program' }
 ]
 
 function MenuIcon({ open, ...props }) {
