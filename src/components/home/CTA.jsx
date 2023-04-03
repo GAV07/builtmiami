@@ -13,8 +13,9 @@ export function CTA({ action }) {
               {action.fields.subtitle}
             </p>
             <div className="flex gap-2 mt-10">
-              {action.fields.buttons.map((button) => (
+              {action.fields.buttons.map((button, i) => (
                 <a
+                  key={i}
                   className="text-black border-black border-2 p-2 rounded sm:relative sm:z-10 sm:mt-0 sm:w-auto sm:flex-none hover:bg-white hover:text-white hover:bg-black last:text-[#3f47ff] last:border-[#3f47ff] last:hover:bg-[#3f47ff] last:hover:text-white"
                 >
                   {button.fields.text}
