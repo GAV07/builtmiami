@@ -59,6 +59,7 @@ export function Hero({ hero }) {
                     <p className="mb-4 text-sm">Zero to One Sprint Applications Open!</p>
                     {hero.fields.buttons.map((button) => (
                       <a
+                        rel="noreferrer"
                         key={button.fields.text}
                         href={button.fields.url}
                         target="_blank"
