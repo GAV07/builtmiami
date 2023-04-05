@@ -22,7 +22,8 @@ export function ZerotoOne({ sprint }) {
           {sprint.fields.subtitle}
         </p>
         {sprint.fields.buttons.map((button) => (
-          <a 
+          <a
+            key={button.fields.text} 
             src={button.fields.url}
             target="_blank" 
             className="rounded-md bg-indigo-50 px-3 py-2 text-md font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"

@@ -59,6 +59,7 @@ export function Hero({ hero }) {
                     <p className="mb-4 text-sm">Zero to One Sprint Applications Open!</p>
                     {hero.fields.buttons.map((button) => (
                       <a
+                        key={button.fields.text}
                         href={button.fields.url}
                         target="_blank"
                         className="w-fit rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
