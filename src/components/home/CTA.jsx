@@ -5,10 +5,7 @@ export function CTA({ action }) {
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our people</h2>
-            <p className="mt-6 text-xl leading-8 text-gray-600">
-              {action.fields.title}
-            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{action.fields.title}</h2>
             <p className="mt-6 text-base leading-7 text-gray-600">
               {action.fields.subtitle}
             </p>
@@ -16,7 +13,7 @@ export function CTA({ action }) {
               {action.fields.buttons.map((button, i) => (
                 <a
                   key={i}
-                  className="text-black border-black border-2 p-2 rounded sm:relative sm:z-10 sm:mt-0 sm:w-auto sm:flex-none hover:bg-white hover:text-white hover:bg-black last:text-[#3f47ff] last:border-[#3f47ff] last:hover:bg-[#3f47ff] last:hover:text-white"
+                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   {button.fields.text}
                 </a>

@@ -8,16 +8,14 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 
 // Integrated homepage sections
-import { Author } from '@/components/home/Author'
 import { CTA } from '@/components/home/CTA'
 import { NavBar } from '@/components/home/NavBar'
-import { Program } from '@/components/home/Program'
 import { Accelerator } from '@/components/home/Accelerator'
 import { ZerotoOne } from '@/components/home/ZerotoOne'
 import { BuilderSummer } from '@/components/home/BuilderSummer'
 import { Hero } from '@/components/home/Hero'
-import { Testimonial } from '@/components/home/Testimonial'
-import { Testimonials } from '@/components/home/Testimonials'
+import { Mission } from '@/components/home/Mission'
+import { Program } from '@/components/home/Program'
 import avatarImage1 from '@/images/primer/avatars/avatar-1.png'
 import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
 
@@ -31,6 +29,7 @@ export async function getStaticProps() {
     props: {
       home : home,
       hero : home.fields.hero,
+      mission : home.fields.mission,
       summer : home.fields.builderSummer,
       sprint : home.fields.zeroToOne,
       accelerator : home.fields.accelerator,
@@ -39,11 +38,10 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ home, hero, summer, sprint, accelerator, action }) {
+export default function Home({ mission, hero, summer, sprint, accelerator, action }) {
   return (
     <>
       <Head>
-        {console.log(home)}
         <title>
           Built in Miami - The Miami Startup Initiative
         </title>
@@ -53,7 +51,8 @@ export default function Home({ home, hero, summer, sprint, accelerator, action }
         />
       </Head>
       <Hero hero={hero} />
-      <NavBar />
+      <Mission mission={mission} />
+      {/* <NavBar /> */}
       <ZerotoOne sprint={sprint} />
       <BuilderSummer summer={summer} />
       <Accelerator accelerator={accelerator}/>
@@ -71,21 +70,7 @@ export default function Home({ home, hero, summer, sprint, accelerator, action }
           </div>
         </div>
       </Container> */}
-      {/* <Testimonial
-        id="testimonial-from-gerardo-stark"
-        author={{
-          name: 'Gerardo Stark',
-          role: 'Creator of Pandemicons',
-          image: avatarImage2,
-        }}
-      >
-        <p>
-          “I’ve tried to create my own icons in the past but quickly got
-          frustrated and gave up. Now I sell my own custom icon sets online.”
-        </p>
-      </Testimonial> */}
       {/* <Program /> */}
-      {/* <Author /> */}
     </>
   )
 }

@@ -64,7 +64,6 @@ export function Accelerator({ accelerator }) {
       aria-labelledby="accelerator-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
-      {console.log(accelerator)}
       <Container>
         <SectionHeading number="3" id="accelerator-title">
           {accelerator.fields.lead}
@@ -75,7 +74,6 @@ export function Accelerator({ accelerator }) {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           {accelerator.fields.subtitle}
         </p>
-        <a src="#" className="text-blue-500">Apply Now <span aria-hidden="true">&rarr;</span></a>
       </Container>
       <Container size="lg" className="mt-16">
         <ol

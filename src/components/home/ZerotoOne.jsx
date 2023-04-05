@@ -2,76 +2,34 @@ import Image from 'next/image'
 
 import { Container } from '@/components/home/Container'
 import { SectionHeading } from '@/components/home/SectionHeading'
-import duotoneImage from '@/images/primer/screencasts/duotone.svg'
-import gridsImage from '@/images/primer/screencasts/grids.svg'
-import setupImage from '@/images/primer/screencasts/setup.svg'
-import strokesImage from '@/images/primer/screencasts/strokes.svg'
 
-const videos = [
-  {
-    title: 'Getting started with Figma',
-    description:
-      'Get familiar with the Figma UI, the different tools it offers, and the most important features.',
-    image: setupImage,
-    runtime: { minutes: 16, seconds: 54 },
-  },
-  {
-    title: 'Setting up your artboard',
-    description:
-      'Learn how to create a new artboard and configure your grid and rulers for designing icons.',
-    image: gridsImage,
-    runtime: { minutes: 9, seconds: 12 },
-  },
-  {
-    title: 'Designing your first icon',
-    description:
-      'Using basic shapes and boolean operations, learn how to design your own notification icon from scratch.',
-    image: strokesImage,
-    runtime: { minutes: 23, seconds: 25 },
-  },
-  {
-    title: 'Advanced design techniques',
-    description:
-      'Learn the techniques you need to know to adapt your original icon to a modern duotone style.',
-    image: duotoneImage,
-    runtime: { minutes: 28, seconds: 44 },
-  },
-]
-
-function PlayIcon(props) {
-  return (
-    <svg
-      aria-hidden="true"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      viewBox="0 0 16 16"
-      {...props}
-    >
-      <path d="M6.75 10.25v-4.5L10.25 8l-3.5 2.25Z" />
-      <circle cx="8" cy="8" r="6.25" fill="none" />
-    </svg>
-  )
-}
 
 export function ZerotoOne({ sprint }) {
   return (
     <section
-      id="zero-to-one"
-      aria-labelledby="zero-to-one-title"
+      id="zero"
+      aria-labelledby="zero-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="1" id="zero-to-one-title">
-          Zero to one Sprint
+        <SectionHeading number="1" id="zero-title">
+          Zero to One Sprint
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           {sprint.fields.title}
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="my-4 text-lg tracking-tight text-slate-700">
           {sprint.fields.subtitle}
         </p>
-        <a src="#" className="text-blue-500">Apply Now <span aria-hidden="true">&rarr;</span></a>
+        {sprint.fields.buttons.map((button) => (
+          <a 
+            src={button.fields.url}
+            target="_blank" 
+            className="rounded-md bg-indigo-50 px-3 py-2 text-md font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+          >
+            {button.fields.text}<span aria-hidden="true"> &rarr;</span>
+          </a>
+        ))}
       </Container>
       <Container size="lg" className="mt-16">
         <ol

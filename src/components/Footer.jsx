@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import shrimp from '@/images/logos/shrimp.png'
+import venture from '@/images/logos/venture.svg'
 
 import { Container } from '@/components/Container'
 
@@ -19,19 +22,25 @@ export function Footer() {
       <Container.Outer>
         <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
           <Container.Inner>
-            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                {/* <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Zero to One</NavLink>
-                <NavLink href="/speaking">Builders Summer</NavLink>
-                <NavLink href="/uses">Accelerator</NavLink> */}
-                <NavLink href="https://www.theshrimpsociety.com/">Visit Shrimp Society</NavLink>
-                <NavLink href="https://www.venturemia.org/">Visit Venture Miami</NavLink>
+            <div className="flex flex-col content-center justify-center gap-6 sm:flex-row">
+              <div className="flex items-center gap-6 text-sm font-medium">
+                <NavLink href="https://www.theshrimpsociety.com/">
+                  <Image
+                    src={shrimp}
+                    alt=""
+                    sizes="(max-width: 200px) 2rem, 2rem"
+                    className="max-w-[10vw] rounded-1xl object-cover dark:bg-zinc-800"
+                  />
+                </NavLink>
+                <NavLink href="https://www.venturemia.org/">
+                  <Image
+                    src={venture}
+                    alt=""
+                    sizes="(max-width: 200px) 2rem, 2rem"
+                    className="max-w-[10vw] rounded-1xl object-cover dark:bg-zinc-800"
+                  />
+                </NavLink>
               </div>
-              {/* <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Venture Miami (City of Miami) All rights
-                reserved.
-              </p> */}
             </div>
           </Container.Inner>
         </div>
