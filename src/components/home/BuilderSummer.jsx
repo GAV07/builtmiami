@@ -10,7 +10,6 @@ export function BuilderSummer({ summer }) {
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        {console.log(summer)}
         <SectionHeading number="2" id="builders-title">
           Builders Summer
         </SectionHeading>
