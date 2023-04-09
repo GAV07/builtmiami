@@ -1,7 +1,51 @@
+import { useState, useEffect } from "react"
 import { Container } from "./Container"
+import { motion, AnimatePresence } from "framer-motion"
 
 
 export function Hero({ hero }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [intervalId, setIntervalId] = useState(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex(currentIndex => (currentIndex + 1) % phrases.length);
+      if (currentIndex === phrases.length - 1) {
+        setCurrentIndex(0);
+      }
+    }, 3000); // change the interval time as needed
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
+
+  const list = {
+    visible: {
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: .3,
+        delayChildren: 0.2
+      }
+     },
+    hidden: { opacity: 0, x: -100},
+  }
+  
+  const item = {
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+    },
+    hidden: { opacity: 0, y: -100 },
+  }
+
+  const phrases =[
+    {id: 1, words: "A Startup Legacy", color: "#3f47ff"},
+    {id: 2, words: "An Amazing Team", color: "#fde12d"},
+    {id: 3, words: "A Market Strategy", color: "#9229e5"},
+    {id: 4, words: "A Prototype", color: "#00e8fc"},
+    {id: 5, words: "A Community", color: "#51180b"},
+  ]
 
   return (
     <div className="bg-white">
@@ -44,13 +88,28 @@ export function Hero({ hero }) {
             />
           </div>
           <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
+            <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 lg:pt-0 lg:px-8 ">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <img src={hero.fields.image.fields.file.url} className="w-[40vw]"/>
+                <div 
+                  className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl"
+                 
+                >
+                  <img src={hero.fields.image.fields.file.url} className="w-full lg:w-[40vw]"/>
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    {/* {hero.fields.title} */}
-                    Build <span className="text-[#3f47ff]">A Startup Legacy</span> in Miami
+                    
+                    Build 
+                    <AnimatePresence mode="wait">
+                        <motion.span 
+                          key={phrases[currentIndex].id}
+                          initial={{ opacity: 0, y: "200%", color: phrases[currentIndex].color }}
+                          animate={{ opacity: 1, y: 0, color: phrases[currentIndex].color, transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 } }}
+                          exit={{ opacity: 0, y: "200%", transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 } }}
+                          >
+                            {" " + phrases[currentIndex].words + " "}
+                        </motion.span>
+                
+                    </AnimatePresence>
+                    <br/> in Miami
                   </h1>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                     {hero.fields.subtitle}
@@ -70,8 +129,17 @@ export function Hero({ hero }) {
                     ))}
                   </div>
                 </div>
-                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                <motion.div 
+                  className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
+                  variants={list}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.div 
+                    className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80"
+                    variants={item}
+                    
+                  >
                     <div className="relative">
                       <img
                         src={hero.fields.photos[0].fields.file.url}
@@ -80,8 +148,12 @@ export function Hero({ hero }) {
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                  </div>
-                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                  </motion.div>
+                  <motion.div 
+                    className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
+                    variants={item}
+                    
+                  >
                     <div className="relative">
                       <img
                         src={hero.fields.photos[1].fields.file.url}
@@ -98,8 +170,12 @@ export function Hero({ hero }) {
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                  </div>
-                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                  </motion.div>
+                  <motion.div 
+                    className="w-44 flex-none space-y-8 pt-32 sm:pt-0"
+                    variants={item}
+                    
+                  >
                     <div className="relative">
                       <img
                         src={hero.fields.photos[3].fields.file.url}
@@ -116,8 +192,8 @@ export function Hero({ hero }) {
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
           </div>

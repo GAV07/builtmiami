@@ -1,7 +1,38 @@
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+
 
 export function CTA({ action }) {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: isInView ? 1 : 0,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.5
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { opacity: 0, y: 200 },
+    visible: {
+      
+      y: isInView ? 0 : 200,
+      opacity: isInView ? 1 : 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+      }
+    }
+  };
+
   return (
-    <div className="overflow-hidden bg-zinc-50 py-32">
+    <div ref={ref} className="overflow-hidden bg-zinc-50 py-32">
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -20,15 +51,20 @@ export function CTA({ action }) {
               ))}
             </div>
           </div>
-          <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-            <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+          <motion.div 
+            className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={item} className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <img
                 src={action.fields.photos[0].fields.file.url}
                 alt=""
                 className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
               />
-            </div>
-            <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+            </motion.div>
+            <motion.div variants={item} className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
               <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                 <img
                   src={action.fields.photos[1].fields.file.url}
@@ -50,8 +86,8 @@ export function CTA({ action }) {
                   className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

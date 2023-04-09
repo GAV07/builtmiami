@@ -1,15 +1,43 @@
-import Image from 'next/image'
-
 import { Container } from '@/components/home/Container'
 import { SectionHeading } from '@/components/home/SectionHeading'
-
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 export function ZerotoOne({ sprint }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: isInView ? 1 : 0,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.5
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: isInView ? 0 : 100,
+      opacity: isInView ? 1 : 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+      }
+    }
+  };
+
+
+
   return (
     <section
       id="zero"
       aria-labelledby="zero-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      ref={ref}
     >
       <Container>
         <SectionHeading number="1" id="zero-title">
@@ -33,17 +61,19 @@ export function ZerotoOne({ sprint }) {
         ))}
       </Container>
       <Container size="lg" className="mt-16">
-        <ol
+        <motion.ol
           role="list"
           className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
+          variants={container}
+          initial="hidden"
+          animate="visible"
         >
           {sprint.fields.cards.map((card) => (
-            <li key={card.fields.title} className="[counter-increment:card]">
+            <motion.li variants={item} key={card.fields.title} className="[counter-increment:card]">
               <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
                   <img 
-                    src={card.fields.image.fields.file.url}
-                    
+                    src={card.fields.image.fields.file.url}  
                   />
                 </div>
               </div>
@@ -51,9 +81,9 @@ export function ZerotoOne({ sprint }) {
                 {card.fields.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{card.fields.subtitle}</p>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </Container>
     </section>
   )

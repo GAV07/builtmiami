@@ -2,64 +2,41 @@ import Image from 'next/image'
 
 import { Container } from '@/components/home/Container'
 import { SectionHeading } from '@/components/home/SectionHeading'
-import abstractBackgroundImage from '@/images/primer/resources/abstract-background.png'
-import discordImage from '@/images/primer/resources/discord.svg'
-import figmaImage from '@/images/primer/resources/figma.svg'
-import videoPlayerImage from '@/images/primer/resources/video-player.svg'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
-const resources = [
-  {
-    title: 'Figma icon templates',
-    description:
-      'Pefectly structured templates for quickly designing new icons at dozens of common sizes.',
-    image: function FigmaImage() {
-      return (
-        <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#2C313D_35%,#000)]">
-          <Image src={figmaImage} alt="" unoptimized />
-        </div>
-      )
-    },
-  },
-  {
-    title: 'Weekly icon teardowns',
-    description:
-      'Weekly videos where we dissect and recreate beautiful icons we find on the web.',
-    image: function VideoPlayerImage() {
-      return (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
-            className="absolute inset-0 h-full w-full object-cover"
-            src={abstractBackgroundImage}
-            alt=""
-            sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
-          />
-          <Image
-            className="relative"
-            src={videoPlayerImage}
-            alt=""
-            unoptimized
-          />
-        </div>
-      )
-    },
-  },
-  {
-    title: 'Community of icon designers',
-    description:
-      "A private Discord server where you can get help and give feedback on each others' work.",
-    image: function DiscordImage() {
-      return (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#6366F1]">
-          <Image src={discordImage} alt="" unoptimized />
-        </div>
-      )
-    },
-  },
-]
 
 export function Accelerator({ accelerator }) {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: isInView ? 1 : 0,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.5
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { y: 100, opacity: 0 },
+    visible: {
+      y: isInView ? 0 : 100,
+      opacity: isInView ? 1 : 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+      }
+    }
+  };
+
   return (
     <section
+      ref={ref}
       id="accelerator"
       aria-labelledby="accelerator-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
@@ -76,14 +53,18 @@ export function Accelerator({ accelerator }) {
         </p>
       </Container>
       <Container size="lg" className="mt-16">
-        <ol
+        <motion.ol
           role="list"
           className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
+          variants={container}
+          initial="hidden"
+          animate="visible"
         >
           {accelerator.fields.cards.map((resource) => (
-            <li
+            <motion.li
               key={resource.fields.title}
               className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
+              variants={item}
             >
               <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
                 <img src={resource.fields.image.fields.file.url} />
@@ -96,9 +77,9 @@ export function Accelerator({ accelerator }) {
                   {resource.fields.subtitle}
                 </p>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </Container>
     </section>
   )
