@@ -15,6 +15,7 @@ import { ZerotoOne } from '@/components/home/ZerotoOne'
 import { BuilderSummer } from '@/components/home/BuilderSummer'
 import { Hero } from '@/components/home/Hero'
 import { Mission } from '@/components/home/Mission'
+import social from '@/images/social.png'
 import { Program } from '@/components/home/Program'
 import avatarImage1 from '@/images/primer/avatars/avatar-1.png'
 import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
@@ -47,8 +48,17 @@ export default function Home({ mission, hero, summer, sprint, accelerator, actio
         </title>
         <meta
           name="description"
-          content="The Built in Miami Innovation Series is a year-long initiative to support early stage entrepreneurs in Miami."
+          content="The Built in Miami Startup Series is a year-long initiative to support early stage entrepreneurs in Miami."
         />
+        <meta property="og:title" content="Built in Miami" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.builtmiami.com" />
+        <meta property="og:image" content={social} />
+        <meta property="fb:app_id" content="built_in_miami" />
+        <meta name="twitter:card" content="built_in_miami"/>
+        <meta name="twitter:site" content="@builtinmiami"/>
+        <meta property="og:site_name" content="Built in Miami"/>
+        <meta name="twitter:image:alt" content="builders_in_miami"/>
       </Head>
       <Hero hero={hero} />
       <Mission mission={mission} />
