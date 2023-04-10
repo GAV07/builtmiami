@@ -15,7 +15,7 @@ import { ZerotoOne } from '@/components/home/ZerotoOne'
 import { BuilderSummer } from '@/components/home/BuilderSummer'
 import { Hero } from '@/components/home/Hero'
 import { Mission } from '@/components/home/Mission'
-import social from '@/images/social.png'
+import social from '@/images/social.jpeg'
 import { Program } from '@/components/home/Program'
 import avatarImage1 from '@/images/primer/avatars/avatar-1.png'
 import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
@@ -67,19 +67,6 @@ export default function Home({ mission, hero, summer, sprint, accelerator, actio
       <BuilderSummer summer={summer} />
       <Accelerator accelerator={accelerator}/>
       <CTA action={action}/>
-      {/* <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
-            <Resume />
-          </div>
-        </div>
-      </Container> */}
       {/* <Program /> */}
     </>
   )
