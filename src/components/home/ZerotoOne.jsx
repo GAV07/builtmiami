@@ -36,7 +36,7 @@ export function ZerotoOne({ sprint }) {
     <section
       id="zero"
       aria-labelledby="zero-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
       ref={ref}
     >
       <Container>
@@ -51,12 +51,13 @@ export function ZerotoOne({ sprint }) {
         </p>
         {sprint.fields.buttons.map((button) => (
           <a
-            key={button.fields.text} 
-            src={button.fields.url}
-            target="_blank" 
-            className="rounded-md bg-indigo-50 px-3 py-2 text-md font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+            rel="noreferrer"
+            key={button.fields.text}
+            href={button.fields.url}
+            target="_blank"
+            className="w-fit rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            {button.fields.text}<span aria-hidden="true"> &rarr;</span>
+            {button.fields.text}
           </a>
         ))}
       </Container>

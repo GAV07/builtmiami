@@ -43,11 +43,14 @@ export function CTA({ action }) {
             <div className="flex gap-2 mt-10">
               {action.fields.buttons.map((button, i) => (
                 <a
-                  key={i}
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  {button.fields.text}
-                </a>
+                rel="noreferrer"
+                key={button.fields.text}
+                href={button.fields.url}
+                target="_blank"
+                className="w-fit rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                {button.fields.text}
+              </a>
               ))}
             </div>
           </div>
