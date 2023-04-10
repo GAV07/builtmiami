@@ -85,6 +85,19 @@ export function ZerotoOne({ sprint }) {
             </motion.li>
           ))}
         </motion.ol>
+        <div className="mt-10 flex justify-center items-center">
+          <p>curriculum by</p>
+          <a
+            rel="noreferrer"
+            href="https://www.argentstrategies.com/"
+            target="_blank"
+          >
+            <img 
+              src={sprint.fields.image.fields.file.url}
+              className="w-[30vw] ml-4 lg:w-[10vw]"  
+            />
+          </a>
+        </div>
       </Container>
     </section>
   )
