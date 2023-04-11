@@ -47,30 +47,6 @@ export function Hero({ hero }) {
     {id: 5, words: "A Community", color: "#51180b"},
   ]
 
-  const features = [
-    {
-      name: 'Push to deploy',
-      description:
-        'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-      href: '#',
-      
-    },
-    {
-      name: 'SSL certificates',
-      description:
-        'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
-      href: '#',
-      
-    },
-    {
-      name: 'Simple queues',
-      description:
-        'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
-      href: '#',
-      
-    },
-  ]
-
   return (
     <div className="bg-white">
       <main>
@@ -116,11 +92,9 @@ export function Hero({ hero }) {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div 
                   className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl"
-                 
                 >
-                  <img src={hero.fields.image.fields.file.url} className="w-full lg:w-[40vw]"/>
+                  <img src={hero.fields.image.fields.file.url} className="w-full lg:w-[30vw]"/>
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    
                     Build 
                     <AnimatePresence mode="wait">
                         <motion.span 
