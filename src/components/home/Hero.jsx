@@ -47,6 +47,30 @@ export function Hero({ hero }) {
     {id: 5, words: "A Community", color: "#51180b"},
   ]
 
+  const features = [
+    {
+      name: 'Push to deploy',
+      description:
+        'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
+      href: '#',
+      
+    },
+    {
+      name: 'SSL certificates',
+      description:
+        'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
+      href: '#',
+      
+    },
+    {
+      name: 'Simple queues',
+      description:
+        'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
+      href: '#',
+      
+    },
+  ]
+
   return (
     <div className="bg-white">
       <main>
@@ -107,14 +131,30 @@ export function Hero({ hero }) {
                           >
                             {" " + phrases[currentIndex].words + " "}
                         </motion.span>
-                
                     </AnimatePresence>
                     <br/> in Miami
                   </h1>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none pb-4">
                     {hero.fields.subtitle}
                   </p>
-                  <div className="mt-10 flex flex-col items-left gap-x-6">
+                  <div className="mx-auto mt-2 max-w-2xl border-t-2 border-black-100 py-8">
+                    <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16  lg:grid-cols-3">
+                      {hero.fields.phases.map((phase) => (
+                        <div key={phase.fields.title} className="flex-col justify-between border-r-2 border-black-100 last:border-none">
+                          <div>
+                            <h3 className="text-lg font-medium text-gray-900">{phase.fields.title}</h3>
+                            <p className="mt-2 text-base text-gray-500">{phase.fields.subtitle}</p>
+                          </div>
+                          {phase.fields.buttons.map((button, i) => (
+                              <a key={i} href={button.fields.url} className="">
+                                <p className="text-[#3f47ff] font-bold">{button.fields.text}</p>
+                              </a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* <div className="mt-10 flex flex-col items-left gap-x-6">
                     <p className="mb-4 text-sm">Zero to One Sprint Applications Open!</p>
                     {hero.fields.buttons.map((button) => (
                       <a
@@ -127,7 +167,7 @@ export function Hero({ hero }) {
                         {button.fields.text}
                       </a>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 <motion.div 
                   className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
@@ -138,7 +178,6 @@ export function Hero({ hero }) {
                   <motion.div 
                     className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80"
                     variants={item}
-                    
                   >
                     <div className="relative">
                       <img
@@ -152,7 +191,6 @@ export function Hero({ hero }) {
                   <motion.div 
                     className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
                     variants={item}
-                    
                   >
                     <div className="relative">
                       <img
