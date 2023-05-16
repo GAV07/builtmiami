@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import shrimp from '@/images/logos/shrimp.png'
+import shrimp from '@/images/logos/shrimp.svg'
 import venture from '@/images/logos/venture.svg'
 
 import { Container } from '@/components/Container'

@@ -47,7 +47,18 @@ export function ZerotoOne({ sprint }) {
           {sprint.fields.title}
         </p>
         <p className="my-4 text-lg tracking-tight text-slate-700">
-          {sprint.fields.subtitle}
+          {sprint.fields.subtitle}. Curriculum by
+          <a
+            className="ml-1 inline-block align-middle"
+            rel="noreferrer"
+            href="https://www.argentstrategies.com/"
+            target="_blank"
+          >
+            <img 
+              src={sprint.fields.image.fields.file.url}
+              className="w-[20vw] lg:w-[5vw]"  
+            />
+          </a>
         </p>
         {sprint.fields.buttons.map((button) => (
           <a
@@ -85,19 +96,6 @@ export function ZerotoOne({ sprint }) {
             </motion.li>
           ))}
         </motion.ol>
-        <div className="mt-10 flex justify-center items-center">
-          <p>curriculum by</p>
-          <a
-            rel="noreferrer"
-            href="https://www.argentstrategies.com/"
-            target="_blank"
-          >
-            <img 
-              src={sprint.fields.image.fields.file.url}
-              className="w-[30vw] ml-4 lg:w-[10vw]"  
-            />
-          </a>
-        </div>
       </Container>
     </section>
   )
