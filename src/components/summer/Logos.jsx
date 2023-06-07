@@ -13,8 +13,9 @@ export function Logos({ cta }) {
           </p>
           <Button className="my-4" href="https://airtable.com/shroe7sRtx7y2dZRa" variant='secondary'>Apply Now</Button>
           <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-            {cta.fields.photos.map((photo) => (
+            {cta.fields.photos.map((photo, i) => (
                 <img
+                key={i}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
                 src={photo.fields.file.url}
                 alt="Transistor"
