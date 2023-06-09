@@ -1,14 +1,13 @@
 import { Button } from '@/components/Button'
 
 export function Logos({ cta }) {
-    console.log(cta)
     return(
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
           <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {cta.fields.title}
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">
+          <p className="mx-auto mt-6 max-w-5xl text-lg leading-8 text-gray-300">
             {cta.fields.subtitle}
           </p>
           <Button className="my-4" href="https://airtable.com/shroe7sRtx7y2dZRa" variant='secondary'>Apply Now</Button>
@@ -16,7 +15,7 @@ export function Logos({ cta }) {
             {cta.fields.photos.map((photo, i) => (
                 <img
                 key={i}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src={photo.fields.file.url}
                 alt="Transistor"
                 width={158}

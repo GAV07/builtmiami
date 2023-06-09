@@ -88,12 +88,12 @@ export function Hero({ hero }) {
             />
           </div>
           <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 lg:pt-0 lg:px-8 ">
+            <div className="mx-auto mt-[20vh] max-w-7xl px-6 pb-32 pt-12 lg:pt-0 lg:px-8 ">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div 
                   className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl"
                 >
-                  <img src={hero.fields.image.fields.file.url} className="w-full lg:w-[30vw]"/>
+                  {/* <img src={hero.fields.image.fields.file.url} className="w-full lg:w-[30vw]"/> */}
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                     Build 
                     <AnimatePresence mode="wait">

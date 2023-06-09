@@ -1,5 +1,4 @@
 export function Location({ location }) {
-    console.log(location.fields)
     return (
         <div className="mt-32 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
