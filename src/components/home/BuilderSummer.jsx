@@ -11,7 +11,7 @@ export function BuilderSummer({ summer }) {
     >
       <Container>
         <SectionHeading number="2" id="builders-title">
-          Builders Summer
+          P2P
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           {summer.fields.title}

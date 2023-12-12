@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import lockup from  '@/images/logos/lockup.png'
+import pill from  '@/images/logos/vm_pill.png'
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Builder Summer', href: '/summer' },
+  // { name: 'Home', href: '/' },
+  // { name: 'Builder Summer', href: '/summer' },
 ]
 
 export function Header() {
@@ -16,9 +16,9 @@ export function Header() {
     <header className="absolute w-full z-10">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-2" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Built in Miami</span>
-            <Image className="h-auto w-[15vw]" src={lockup} alt="" />
+            <Image className="h-auto w-[15vw]" src={pill} alt="" />
           </a>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -36,7 +36,7 @@ export function Header() {
             href="https://airtable.com/shroe7sRtx7y2dZRa"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Builder Summer Application
+            Apply Now
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -58,7 +58,7 @@ export function Header() {
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
-                src={lockup}
+                src={pill}
                 alt=""
               />
             </a>
@@ -66,7 +66,7 @@ export function Header() {
               href="https://airtable.com/shroe7sRtx7y2dZRa"
               className="ml-auto rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Builder Summer Application
+              Apply Now
             </a>
             <button
               type="button"
