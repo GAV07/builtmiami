@@ -3,6 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import pill from  '@/images/logos/vm_pill.png'
+import Link from 'next/link'
 
 const navigation = [
   // { name: 'Home', href: '/' },
@@ -16,10 +17,10 @@ export function Header() {
     <header className="absolute w-full z-10">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-2" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Built in Miami</span>
             <Image className="h-auto w-[15vw]" src={pill} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
