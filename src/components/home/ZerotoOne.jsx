@@ -47,7 +47,7 @@ export function ZerotoOne({ sprint }) {
           {sprint.fields.title}
         </p>
         <p className="my-4 text-lg tracking-tight text-slate-700">
-          {sprint.fields.subtitle}. Curriculum by
+          {sprint.fields.subtitle}.{/* Curriculum by
           <a
             className="ml-1 inline-block align-middle"
             rel="noreferrer"
@@ -58,7 +58,7 @@ export function ZerotoOne({ sprint }) {
               src={sprint.fields.image.fields.file.url}
               className="w-[20vw] lg:w-[5vw]"  
             />
-          </a>
+          </a>*/}
         </p>
         {sprint.fields.buttons.map((button) => (
           <a
