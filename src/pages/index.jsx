@@ -20,7 +20,7 @@ import { Program } from '@/components/home/Program'
 import avatarImage1 from '@/images/primer/avatars/avatar-1.png'
 import avatarImage2 from '@/images/primer/avatars/avatar-2.png'
 import Stats from "@/components/Stats";
-import {DemoDay} from "@/components/Home/DemoDay";
+import {DemoDay} from "@/components/home/DemoDay";
 import {Event} from "@/components/home/Event";
 
 
