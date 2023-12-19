@@ -79,41 +79,42 @@ export function Event({ event }) {
   };
 
   return (
-    <section
-      ref={ref}
-      id="accelerator"
-      aria-labelledby="accelerator-title"
-      className="w-full mx-auto flex flex-col md:justify-between justify-center items-center gap-y-10  scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
-    >
+
+      event.fields.show &&  <section
+          ref={ref}
+          id="accelerator"
+          aria-labelledby="accelerator-title"
+          className="w-full mx-auto flex flex-col md:justify-between justify-center items-center gap-y-10  scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      >
 
 
-      <Container>
-        <p className="text-5xl font-semibold tracking-tight text-gray-900">
-          {event.fields.subtitle}
-        </p>
-        <p className="text-xl leading-7 text-gray-600">
-          {event.fields.title}
-        </p>
-        <p className="text-sm leading-7 text-gray-600 flex justify-start items-center gap-x-3">
-          <span>{ eventDate.month }</span>
-          <span>{ eventDate.day }</span>
-          <span>{ eventDate.year }</span>
-        </p>
-      </Container>
+        <Container>
+          <p className="text-5xl font-semibold tracking-tight text-gray-900">
+            {event.fields.subtitle}
+          </p>
+          <p className="text-xl leading-7 text-gray-600">
+            {event.fields.title}
+          </p>
+          <p className="text-sm leading-7 text-gray-600 flex justify-start items-center gap-x-3">
+            <span>{ eventDate.month }</span>
+            <span>{ eventDate.day }</span>
+            <span>{ eventDate.year }</span>
+          </p>
+        </Container>
 
-      <Container className={'flex gap-x-10'}>
-        {
-          Object.entries(countdown).map(([unit, value]) => {
+        <Container className={'flex gap-x-10'}>
+          {
+            Object.entries(countdown).map(([unit, value]) => {
 
-            return (
-                <h3 key={unit} className="mt-4 text-lg tracking-tight text-slate-900 flex flex-col justify-start items-center gap-y-6">
-                  <span className={'text-[#3F47FF] text-[70px] font-bold'}>{value}</span>
-                  <span>{unit}</span>
-                </h3>)
-          })
-        }
-      </Container>
+              return (
+                  <h3 key={unit} className="mt-4 text-lg tracking-tight text-slate-900 flex flex-col justify-start items-center gap-y-6">
+                    <span className={'text-[#3F47FF] text-[70px] font-bold'}>{value}</span>
+                    <span>{unit}</span>
+                  </h3>)
+            })
+          }
+        </Container>
 
-    </section>
+      </section>
   )
 }
