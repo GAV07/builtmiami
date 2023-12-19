@@ -40,7 +40,7 @@ export function CTA({ action }) {
             <p className="mt-6 text-base leading-7 text-gray-600">
               {action.fields.subtitle}
             </p>
-            <div className="flex-col gap-2 mt-10 lg:flex-row">
+            <div className="flex flex-col gap-2 mt-10 lg:flex-row">
               {action.fields.buttons.map((button, i) => (
                 <a
                 rel="noreferrer"
