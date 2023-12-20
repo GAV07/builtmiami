@@ -62,7 +62,7 @@ export function BuilderSummer({summer}) {
                         className="mx-auto grid grid-cols-1 gap-8">
                         {summer.fields.groups.map((item, index) => (
                             <div key={item.fields.title} className={'flex justify-center items-start gap-x-10'}>
-                                <div className="basis-[20%] flex items-center text-sm font-semibold leading-6 text-indigo-600">
+                                <div className="sm:basis-[20%] basis-[30%] flex items-center text-sm font-semibold leading-6 text-indigo-600">
                                     <svg viewBox="0 0 4 4" className="mr-4 h-1 w-1 flex-none bg-red-200" aria-hidden="true">
                                         <circle cx={2} cy={2} r={2} fill="currentColor"/>
                                     </svg>
@@ -73,7 +73,7 @@ export function BuilderSummer({summer}) {
                                         aria-hidden="true"
                                     />*/}
                                 </div>
-                                <div className={'basis-[90%] order-solid border-b-2 border-gray-300 pb-6'}>
+                                <div className={'sm:basis-[80%] basis-[70%] order-solid border-b-2 border-gray-300 pb-6'}>
                                     <p className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{item.fields.title}</p>
                                     <p className="mt-1 text-base leading-7 text-gray-600">{item.fields.subtitle}</p>
 
