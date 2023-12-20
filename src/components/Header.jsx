@@ -34,8 +34,8 @@ export function Header() {
             Stay in the Loop 
           </a>
           <a
-            href="https://airtable.com/shroe7sRtx7y2dZRa"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            href="https://airtable.com/appwL7Iku8HiHU87A/shrEX73O6jtofCoRv"
+            className="rounded-md bg-[#3F47FF] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF]"
           >
             Apply Now
           </a>
@@ -64,8 +64,8 @@ export function Header() {
               />
             </a>
             <a
-              href="https://airtable.com/shroe7sRtx7y2dZRa"
-              className="ml-auto rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              href="https://airtable.com/appwL7Iku8HiHU87A/shrEX73O6jtofCoRv"
+              className="ml-auto rounded-md bg-[#3F47FF] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF]"
             >
               Apply Now
             </a>

@@ -53,6 +53,9 @@ export function Mission({ mission }) {
                 <div className="mt-10 max-w-2xl text-base leading-7 text-gray-700">
                   {documentToReactComponents(mission.fields.body, renderOptions)}
                 </div>
+                <div>
+                  <img src={mission.fields.image.fields.file.url} className={'h-full w-full object-cover rounded-md'} />
+                </div>
               </div>
               <div className="lg:flex lg:flex-auto lg:justify-center">
                 <motion.dl
