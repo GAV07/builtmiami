@@ -47,7 +47,7 @@ export function CTA({ action }) {
                 key={button.fields.text}
                 href={button.fields.url}
                 target="_blank"
-                className="w-fit rounded-md bg-[#3f47ff] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 last:bg-[#9229e5] last:hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 lg:mr-2"
+                className="w-fit rounded-md bg-[#3f47ff] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] last:bg-[#9229e5] last:hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF] lg:mr-2"
               >
                 {button.fields.text}
               </a>
