@@ -98,10 +98,10 @@ export function Event({event}) {
         >
             <Container>
                 <p className="text-5xl font-semibold tracking-tight text-gray-900">
-                    {event.fields.subtitle}
+                    {event.fields.title}
                 </p>
                 <p className="text-xl leading-7 text-gray-600">
-                    {event.fields.title}
+                    {event.fields.subtitle}
                 </p>
                 <p className="text-sm leading-7 text-gray-600 flex justify-start items-center gap-x-3">
                     <span>{eventDate.month}</span>
