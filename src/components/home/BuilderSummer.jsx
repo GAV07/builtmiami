@@ -44,7 +44,8 @@ export function BuilderSummer({summer}) {
         <section
             id="builders"
             aria-labelledby="builders-title"
-            className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+            // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+            className="py-16"
         >
             <Container>
                 <SectionHeading number="2" id="builders-title">
@@ -68,10 +69,6 @@ export function BuilderSummer({summer}) {
                                     </svg>
 
                                     {item.fields.lead}
-                                    {/*<div
-                                        className="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
-                                        aria-hidden="true"
-                                    />*/}
                                 </div>
                                 <div className={'sm:basis-[80%] basis-[70%] order-solid border-b-2 border-gray-300 pb-6'}>
                                     <p className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{item.fields.title}</p>

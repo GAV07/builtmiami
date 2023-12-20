@@ -36,7 +36,8 @@ export function ZerotoOne({ sprint }) {
     <section
       id="zero"
       aria-labelledby="zero-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
+      // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
+      className="py-16"
       ref={ref}
     >
       <Container>

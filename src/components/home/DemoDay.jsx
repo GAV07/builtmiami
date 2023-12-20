@@ -39,7 +39,8 @@ export function DemoDay({demoDay}) {
             ref={ref}
             id="accelerator"
             aria-labelledby="accelerator-title"
-            className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+            // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+            className="py-16"
         >
             <Container size="sm" className={'flex flex-col gap-y-4'}>
 
