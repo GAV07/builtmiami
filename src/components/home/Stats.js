@@ -57,4 +57,4 @@ let Stats = ({stats, title, subtitle}) => {
     )
 }
 
-export default StatsComponent;
+export default Stats;

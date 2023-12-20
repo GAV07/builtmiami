@@ -25,14 +25,14 @@ let Stats = ({stats}) => {
                 {stats.map((stat, index) => {
                     return (
 
-                        ( stat.fields.url === '#' || stat.fields.url === '' ) ?
+                        (stat.fields.url === '#' || stat.fields.url === '') ?
 
                             /* STAT HAS NO EXTERNAL LINK */
                             <div key={index}
                                  className={"max-w-max mx-auto text-center flex flex-col gap-y-2"}>
                                 <h3 className={"w-full text-[72px] md:text-[72px] leading-[32px] text-[#3F47FF] font-bold"}
                                     // style={{WebkitTextStroke: `2px #3F47FF`, color: "transparent"}}>
-                                    >
+                                >
                                     {stat.fields.statistic}
                                 </h3>
                                 <p className={"text-[16px] w-full mb-[8px] text-black leading-[24px]"}>
@@ -42,15 +42,20 @@ let Stats = ({stats}) => {
 
                             /* STAT HAS EXTERNAL LINK */
                             <a key={index} href={stat.fields.url}
-                               className={"max-w-max mx-auto text-center flex flex-col gap-y-8"}>
-                                <h3 className={"w-full text-[72px] md:text-[72px] leading-[32px] text-[#3F47FF] font-bold"}
-                                    // style={{WebkitTextStroke: `2px #3F47FF`, color: "transparent"}}>
+                               className={"md:max-w-max  bg-[#3F47FF] pl-[5px] mx-auto text-center"}>
+                                <span className={'bg-zinc-50 flex flex-col justify-start items-start lex-col gap-y-8 pl-5'}>
+                                    <span
+                                        className={"w-full text-[60px] md:text-[60px] leading-[32px] text-gray-900 font-semibold"}
                                     >
-                                    {stat.fields.statistic}
-                                </h3>
-                                <p className={"text-[20px] w-full mb-[8px] text-black font-bold leading-[24px]"}>
-                                    {stat.fields.title}
-                                </p>
+                                        {stat.fields.statistic}
+                                    </span>
+                                    <span className={"text-[20px] w-full mb-[8px] text-gray-600 leading-[24px]"}>
+                                        {stat.fields.title}
+                                    </span>
+                                </span>
+                                <span>
+
+                                </span>
                             </a>
                     )
                 })}
