@@ -29,7 +29,8 @@ export function Event({event}) {
         return countdown;
     }
 
-    const [countdown, setCountdown] = useState(getCountdown());
+    // const [countdown, setCountdown] = useState(getCountdown());
+    const [countdown, setCountdown] = useState({ Days: 0, Hours: 0, Minutes: 0, Seconds: 0 });
 
     const [eventDate, setEventDate] = useState({});
 
@@ -49,11 +50,20 @@ export function Event({event}) {
 
     }, [])
 
-    useEffect(() => {
+/*    useEffect(() => {
         setTimeout(() => {
             setCountdown(getCountdown())
         }, 1000);
-    });
+    });*/
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCountdown(getCountdown());
+        }, 1000);
+
+        return () => clearInterval(intervalId); // Clear the interval on component unmount
+    }, []);
+
 
     const container = {
         hidden: {opacity: 1},
@@ -105,11 +115,11 @@ export function Event({event}) {
                     Object.entries(countdown).map(([unit, value]) => {
 
                         return (
-                            <h3 key={unit}
+                            <div key={unit}
                                 className="mt-4 text-lg tracking-tight text-slate-900 flex flex-col justify-start items-center gap-y-6">
                                 <span className={'text-[#3F47FF] text-[70px] font-bold'}>{value}</span>
                                 <span>{unit}</span>
-                            </h3>)
+                            </div>)
                     })
                 }
             </Container>
