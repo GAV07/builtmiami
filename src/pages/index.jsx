@@ -68,8 +68,8 @@ export default function Home({ mission, hero, summer, sprint, accelerator, demoD
         <meta name="twitter:image:alt" content="builders_in_miami"/>
       </Head>
       <Hero hero={hero} />
-      {/*<Stats stats={stats} />*/}
-      {/*<Mission mission={mission} />*/}
+      <Stats stats={stats} />
+      <Mission mission={mission} />
       <Event event={event} />
       {/* <NavBar /> */}
       <ZerotoOne sprint={sprint} />
