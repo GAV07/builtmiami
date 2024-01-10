@@ -54,20 +54,22 @@ export function CTA({ action }) {
               ))}
             </div>
           </div>
-          <motion.div 
+          <div //motion.div
             className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents"
-            variants={container}
+            /*variants={container}
             initial="hidden"
-            animate="visible"
+            animate="visible"*/
           >
-            <motion.div variants={item} className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+            <div //motion.div
+                /*variants={item}*/ className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <img
                 src={action.fields.photos[0].fields.file.url}
                 alt=""
                 className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
               />
-            </motion.div>
-            <motion.div variants={item} className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+            </div>
+            <div //motion.div
+                /*variants={item}*/ className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
               <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                 <img
                   src={action.fields.photos[1].fields.file.url}
@@ -89,8 +91,8 @@ export function CTA({ action }) {
                   className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

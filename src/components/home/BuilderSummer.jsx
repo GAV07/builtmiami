@@ -45,7 +45,7 @@ export function BuilderSummer({summer}) {
             id="builders"
             aria-labelledby="builders-title"
             // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
-            className="py-16"
+            className="py-16 bg-zinc-50"
         >
             <Container>
                 <SectionHeading number="2" id="builders-title">
