@@ -37,7 +37,7 @@ export function ZerotoOne({ sprint }) {
       id="zero"
       aria-labelledby="zero-title"
       // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
-      className="py-16"
+      className="py-16 bg-zinc-50"
       ref={ref}
     >
       <Container>
@@ -74,15 +74,15 @@ export function ZerotoOne({ sprint }) {
         ))}
       </Container>
       <Container size="lg" className="mt-16">
-        <motion.ol
+        <div /*motion.ol*/
           role="list"
           className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
-          variants={container}
+          /*variants={container}
           initial="hidden"
-          animate="visible"
+          animate="visible"*/
         >
           {sprint.fields.cards.map((card) => (
-            <motion.li variants={item} key={card.fields.title} className="[counter-increment:card]">
+            <div/*motion.li*/ /*variants={item}*/ key={card.fields.title} className="[counter-increment:card]">
               <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
                   <img 
@@ -94,9 +94,9 @@ export function ZerotoOne({ sprint }) {
                 {card.fields.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{card.fields.subtitle}</p>
-            </motion.li>
+            </div>
           ))}
-        </motion.ol>
+        </div>
       </Container>
     </section>
   )

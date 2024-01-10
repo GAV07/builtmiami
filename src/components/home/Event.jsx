@@ -94,7 +94,7 @@ export function Event({event}) {
             ref={ref}
             id="accelerator"
             aria-labelledby="accelerator-title"
-            className="w-full mx-auto flex flex-col md:justify-between justify-center items-center gap-y-10 py-24"
+            className="bg-zinc-50 w-full mx-auto flex flex-col md:justify-between justify-center items-center gap-y-10 py-24"
         >
             <Container className={'md:w-1/2 w-full mx-auto text-center'}>
                 <p className="text-5xl font-semibold tracking-tight text-gray-900">
@@ -110,14 +110,14 @@ export function Event({event}) {
                 </p>
             </Container>
 
-            <Container className={'md:w-1/2 w-full mx-auto flex justify-center items-center gap-x-10'}>
+            <Container className={'p-4 w-full overflow-hidden mx-auto flex justify-center items-center gap-x-10'}>
                 {
                     Object.entries(countdown).map(([unit, value]) => {
 
                         return (
                             <div key={unit}
-                                className="mt-4 text-lg tracking-tight text-slate-900 flex flex-col justify-start items-center gap-y-6">
-                                <span className={'text-[#3F47FF] text-[70px] font-bold'}>{value}</span>
+                                className="mt-auto pt-4 text-center text-lg tracking-tight text-slate-900 flex flex-col justify-start items-center gap-y-6">
+                                <span className={'text-[#3F47FF] md:text-[70px] text-[50px] font-bold mx-auto'}>{value}</span>
                                 <span>{unit}</span>
                             </div>)
                     })

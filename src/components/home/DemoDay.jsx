@@ -40,7 +40,7 @@ export function DemoDay({demoDay}) {
             id="accelerator"
             aria-labelledby="accelerator-title"
             // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
-            className="py-16"
+            className="py-16 bg-zinc-50"
         >
             <Container size="sm" className={'flex flex-col gap-y-4'}>
 
@@ -51,10 +51,10 @@ export function DemoDay({demoDay}) {
             </Container>
             <Container size="lg" className="mt-16 lg:w-[60%] w-full mx-auto">
 
-                <div
+                <div //motion.ul
                     key={demoDay.fields.title}
                     className="md:aspect-[1/1] sm:aspect-video aspect-[1/1]"
-                    variants={item}
+                    /*variants={item}*/
                 >
                         <img src={demoDay.fields.image.fields.file.url}
                              className={'h-full w-full object-cover rounded-md'}/>
