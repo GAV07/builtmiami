@@ -122,6 +122,7 @@ export function Event({event}) {
                             </div>)
                     })
                 }
+
             </Container>
 
             <Container className={'w-full mx-auto'}>
