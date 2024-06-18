@@ -186,7 +186,6 @@ export function Hero({ hero }) {
                   <motion.div 
                     className="w-44 flex-none space-y-8 pt-32 sm:pt-0"
                     variants={item}
-                    
                   >
                     <div className="relative">
                       <img

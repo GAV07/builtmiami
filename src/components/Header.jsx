@@ -30,14 +30,14 @@ export function Header() {
           ))}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
-          <a href="https://airtable.com/shrkjM30IAb9HP0he" className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900">
+          {/* <a href="https://airtable.com/shrkjM30IAb9HP0he" className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900">
             Stay in the Loop 
-          </a>
+          </a> */}
           <a
-            href="https://airtable.com/shroe7sRtx7y2dZRa"
+            href="https://airtable.com/appwL7Iku8HiHU87A/pag9921njt7sgXG0L/form"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Apply Now
+            Join the Season 3
           </a>
         </div>
         <div className="flex lg:hidden">
