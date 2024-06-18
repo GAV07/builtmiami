@@ -19,7 +19,7 @@ function NavLink({ href, children }) {
 
 export function Footer() {
   return (
-    <footer className="mt-12">
+    <footer className="pt-12 bg-zinc-50">
       <Container.Outer>
         <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
           <Container.Inner>
@@ -33,12 +33,12 @@ export function Footer() {
                     className="max-w-[40vw] lg:max-w-[10vw] rounded-1xl object-cover dark:bg-zinc-800"
                   />
                 </NavLink> */}
-                <NavLink href="https://www.venturemia.org/">
+                <NavLink href="https://www.venturemia.org/" >
                   <Image
                     src={pill}
                     alt=""
-                    
-                    className="max-w-[40vw] lg:max-w-[25vw] rounded-1xl object-cover dark:bg-zinc-800"
+
+                    className="bg-zinc-50 max-w-[40vw] lg:max-w-[25vw] rounded-1xl object-cover"
                   />
                 </NavLink>
               </div>

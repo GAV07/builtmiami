@@ -36,7 +36,8 @@ export function ZerotoOne({ sprint }) {
     <section
       id="zero"
       aria-labelledby="zero-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
+      // className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32 overflow-hidden"
+      className="py-16 bg-zinc-50"
       ref={ref}
     >
       <Container>
@@ -47,7 +48,7 @@ export function ZerotoOne({ sprint }) {
           {sprint.fields.title}
         </p>
         <p className="my-4 text-lg tracking-tight text-slate-700">
-          {sprint.fields.subtitle}. Curriculum by
+          {sprint.fields.subtitle}.{/* Curriculum by
           <a
             className="ml-1 inline-block align-middle"
             rel="noreferrer"
@@ -58,7 +59,7 @@ export function ZerotoOne({ sprint }) {
               src={sprint.fields.image.fields.file.url}
               className="w-[20vw] lg:w-[5vw]"  
             />
-          </a>
+          </a>*/}
         </p>
         {sprint.fields.buttons.map((button) => (
           <a
@@ -66,22 +67,22 @@ export function ZerotoOne({ sprint }) {
             key={button.fields.text}
             href={button.fields.url}
             target="_blank"
-            className="w-fit rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="w-fit rounded-md bg-[#3F47FF] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF]"
           >
             {button.fields.text}
           </a>
         ))}
       </Container>
       <Container size="lg" className="mt-16">
-        <motion.ol
+        <div /*motion.ol*/
           role="list"
           className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
-          variants={container}
+          /*variants={container}
           initial="hidden"
-          animate="visible"
+          animate="visible"*/
         >
           {sprint.fields.cards.map((card) => (
-            <motion.li variants={item} key={card.fields.title} className="[counter-increment:card]">
+            <div/*motion.li*/ /*variants={item}*/ key={card.fields.title} className="[counter-increment:card]">
               <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
                   <img 
@@ -93,9 +94,9 @@ export function ZerotoOne({ sprint }) {
                 {card.fields.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{card.fields.subtitle}</p>
-            </motion.li>
+            </div>
           ))}
-        </motion.ol>
+        </div>
       </Container>
     </section>
   )
