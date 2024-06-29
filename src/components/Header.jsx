@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import pill from  '@/images/logos/vm_pill.png'
 import Link from 'next/link'
+import { motion, AnimatePresence } from "framer-motion"
 
 const navigation = [
   // { name: 'Home', href: '/' },
@@ -13,6 +14,58 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [intervalId, setIntervalId] = useState(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex(currentIndex => (currentIndex + 1) % phrases.length);
+      if (currentIndex === phrases.length - 1) {
+        setCurrentIndex(0);
+      }
+    }, 3000); // change the interval time as needed
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, []);
+
+  const list = {
+    visible: {
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 1,
+        staggerChildren: .3,
+        delayChildren: 0.2
+      }
+     },
+    hidden: { opacity: 0, x: -100},
+  }
+  
+  const item = {
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+    },
+    hidden: { opacity: 0, y: -100 },
+  }
+
+  const phrases = [
+    {id: 1, words: "A Startup Legacy", color: "#3f47ff"},
+    {id: 2, words: "An Amazing Team", color: "#fde12d"},
+    {id: 3, words: "A Market Strategy", color: "#9229e5"},
+    {id: 4, words: "A Prototype", color: "#00e8fc"},
+    {id: 5, words: "A Community", color: "#51180b"},
+    {id: 6, words: "A Revolutionary Product", color: "#ff5733"},
+    {id: 7, words: "A Sustainable Future", color: "#4caf50"},
+    {id: 8, words: "A Global Network", color: "#8e44ad"},
+    {id: 9, words: "An Innovative Solution", color: "#e67e22"},
+    {id: 10, words: "A Vibrant Ecosystem", color: "#2ecc71"},
+    {id: 11, words: "A Tech Hub", color: "#3498db"},
+    {id: 12, words: "A Creative Culture", color: "#e74c3c"},
+    {id: 13, words: "A Strong Brand", color: "#f39c12"},
+    {id: 14, words: "A Powerful Vision", color: "#9b59b6"},
+  ];
+
   return (
     <header className="absolute w-full z-10">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-2" aria-label="Global">
@@ -21,6 +74,21 @@ export function Header() {
             <span className="sr-only">Built in Miami</span>
             <Image className="h-auto w-[15vw]" src={pill} alt="" />
           </Link>
+        </div>
+        <div className="w-24 flex justify-left">
+          <p className="text-lg font-bold tracking-tight text-white">
+            Build Here
+            {/* <AnimatePresence mode="wait">
+                <motion.span 
+                  key={phrases[currentIndex].id}
+                  initial={{ opacity: 0, y: "200%", color: phrases[currentIndex].color }}
+                  animate={{ opacity: 1, y: 0, color: phrases[currentIndex].color, transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 } }}
+                  exit={{ opacity: 0, y: "200%", transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 } }}
+                  >
+                    {" " + phrases[currentIndex].words + " "}
+                </motion.span>
+            </AnimatePresence> */}
+          </p>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
