@@ -50,24 +50,25 @@ export function Header() {
   }
 
   const phrases = [
-    {id: 1, words: "A Startup Legacy", color: "#3f47ff"},
-    {id: 2, words: "An Amazing Team", color: "#fde12d"},
-    {id: 3, words: "A Market Strategy", color: "#9229e5"},
-    {id: 4, words: "A Prototype", color: "#00e8fc"},
-    {id: 5, words: "A Community", color: "#51180b"},
-    {id: 6, words: "A Revolutionary Product", color: "#ff5733"},
-    {id: 7, words: "A Sustainable Future", color: "#4caf50"},
-    {id: 8, words: "A Global Network", color: "#8e44ad"},
-    {id: 9, words: "An Innovative Solution", color: "#e67e22"},
-    {id: 10, words: "A Vibrant Ecosystem", color: "#2ecc71"},
-    {id: 11, words: "A Tech Hub", color: "#3498db"},
-    {id: 12, words: "A Creative Culture", color: "#e74c3c"},
-    {id: 13, words: "A Strong Brand", color: "#f39c12"},
-    {id: 14, words: "A Powerful Vision", color: "#9b59b6"},
-  ];
+    {id: 1, words: "A Startup Legacy", color: "#ff4500"},
+    {id: 2, words: "An Amazing Team", color: "#ffd700"},
+    {id: 3, words: "A Market Plan", color: "#ff69b4"},
+    {id: 4, words: "A Prototype", color: "#00ced1"},
+    {id: 5, words: "A Community", color: "#7fff00"},
+    {id: 6, words: "A New Brand", color: "#ff6347"},
+    {id: 7, words: "A Great Idea", color: "#ff00ff"},
+    {id: 8, words: "A Tech Hub", color: "#00ff00"},
+    {id: 9, words: "A Bold Vision", color: "#ffa500"},
+    {id: 10, words: "A Strong Team", color: "#00bfff"},
+    {id: 11, words: "A Fresh Start", color: "#ff1493"},
+    {id: 12, words: "A Bright Future", color: "#ff8c00"},
+    {id: 13, words: "A Clear Path", color: "#adff2f"},
+    {id: 14, words: "A Solid Plan", color: "#00fa9a"},
+    {id: 15, words: "A Winning Idea", color: "#ff4500"}
+];
 
   return (
-    <header className="absolute w-full z-10">
+    <header className="absolute w-full z-10 bg-gradient-to-b from-black to-transparent">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-2" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -75,10 +76,10 @@ export function Header() {
             <Image className="h-auto w-[15vw]" src={pill} alt="" />
           </Link>
         </div>
-        <div className="w-24 flex justify-left">
+        <div className="w-60 flex justify-left">
           <p className="text-lg font-bold tracking-tight text-white">
-            Build Here
-            {/* <AnimatePresence mode="wait">
+            Build
+            <AnimatePresence mode="wait">
                 <motion.span 
                   key={phrases[currentIndex].id}
                   initial={{ opacity: 0, y: "200%", color: phrases[currentIndex].color }}
@@ -87,7 +88,7 @@ export function Header() {
                   >
                     {" " + phrases[currentIndex].words + " "}
                 </motion.span>
-            </AnimatePresence> */}
+            </AnimatePresence>
           </p>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -101,12 +102,6 @@ export function Header() {
           {/* <a href="https://airtable.com/shrkjM30IAb9HP0he" className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900">
             Stay in the Loop 
           </a> */}
-          <a
-            href="https://airtable.com/appwL7Iku8HiHU87A/shrEX73O6jtofCoRv"
-            className="rounded-md bg-[#3F47FF] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF]"
-          >
-            Join the Season 3
-          </a>
         </div>
         <div className="flex lg:hidden">
           <button
