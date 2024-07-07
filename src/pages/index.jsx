@@ -70,12 +70,12 @@ export default function Home({ mission, hero, summer, sprint, accelerator, demoD
       <Hero hero={hero} />
       <Stats stats={stats} />
       <Mission mission={mission} />
-      <Event event={event} />
+      {/* <Event event={event} /> */}
       {/* <NavBar /> */}
-      <ZerotoOne sprint={sprint} />
-      <BuilderSummer summer={summer} />
+      {/* <ZerotoOne sprint={sprint} /> */}
+      {/* <BuilderSummer summer={summer} /> */}
       {/*<Accelerator accelerator={accelerator}/>*/}
-      <DemoDay demoDay={demoDay}/>
+      {/* <DemoDay demoDay={demoDay}/> */}
       <CTA action={action}/>
       {/* <Program /> */}
     </>

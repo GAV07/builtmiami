@@ -6,21 +6,10 @@ let Stats = ({stats}) => {
         <div className={'w-full bg-zinc-50'}>
             <div className={"bg-zinc-50 w-[90%] mx-auto flex flex-col gap-y-16 pt-20"}>
 
-                {
-                    (stats?.fields?.title || stats?.fields?.subtitle) && (
+                <div className="mx-auto max-w-7xl px-6 lg:pt-32 sm:mt-0 lg:px-8 xl:-mt-8">
+                    <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Season 2 Overview</h1>
+                </div>
 
-                        <div className={'text-left'}>
-                            <h1 className="text-[20px] md:text-[25px] font-light mb-3">
-                                {stats.fields.title}
-                            </h1>
-                            <p className="text-[18px] leading-8 italic">
-                                {stats.fields.subtitle}
-                            </p>
-                        </div>
-                    )
-                }
-
-                {/*<div className={"w-full mx-auto flex justify-center items-center flex-col md:flex-row md:gap-x-[32px] md:gap-y-0 gap-x-0 gap-y-12"}>*/}
                 <div
                     className={"bg-zinc-50 w-full mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-x-[32px] md:gap-y-0 gap-x-0 gap-y-12"}>
                     {stats.map((stat, index) => {
