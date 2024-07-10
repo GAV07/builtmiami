@@ -70,9 +70,9 @@ export function Header() {
   return (
     <header className="absolute w-full z-10 bg-gradient-to-b from-black to-transparent">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-2" aria-label="Global">
-        <div className="flex lg:flex-1">
+        <div className="hidden lg:block flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Built in Miami</span>
+            <span className="sr-only">Venture Miami - Built in Miami</span>
             <Image className="h-auto w-[15vw]" src={pill} alt="" />
           </Link>
         </div>
