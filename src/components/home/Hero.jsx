@@ -55,7 +55,7 @@ export function Hero({ hero }) {
                 }}
               />
               <motion.a
-                href="https://airtable.com/appwL7Iku8HiHU87A/shrEX73O6jtofCoRv"
+                href="https://airtable.com/appwL7Iku8HiHU87A/paggeR4365csfnPNy/form"
                 className="relative bg-[#3F47FF] text-white px-6 py-4 rounded-lg font-semibold shadow-sm hover:bg-white hover:text-[#3F47FF]"
                 animate={{
                   scale: [1, 1.5, 1]
