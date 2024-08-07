@@ -62,10 +62,10 @@ export function Mission({ mission }) {
                 </div>
                 <div className="">
                   <div //motion.dl
-                      className="flex justify-between"
+                      className="flex flex-col md:flex-row justify-between"
                   >
                     {mission.fields.callouts.map((stat, i) => (
-                        <div className="flex flex-col w-[24vw] content-between align-start">
+                        <div className="flex flex-col md:w-[24vw] content-between align-start">
                           <div 
                               key={stat.fields.text}
                           >

@@ -11,38 +11,29 @@ const people = [
     // More people...
   ]
   
-  export default function Judges() {
+  export default function Judges({judges}) {
     return (
       <div className="bg-white py-24 md:py-32 lg:py-40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our team</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Demo Day Judges</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the
-              best results for our clients.
+              We hosted a dynamic group of judges across the funding spectrum of Miami to select the winner of the 2024 Demo Day.
             </p>
           </div>
           <ul
             role="list"
             className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
           >
-            {people.map((person) => (
-              <li key={person.name}>
-                <img alt="" src={person.imageUrl} className="aspect-[3/2] w-full rounded-2xl object-cover" />
-                <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{person.name}</h3>
-                <p className="text-base leading-7 text-gray-600">{person.role}</p>
-                <p className="mt-4 text-base leading-7 text-gray-600">{person.bio}</p>
+            {judges.map((judge) => (
+              <li key={judge.fields.text}>
+                <img alt="" src={judge.fields.image.fields.file.url} className="aspect-[3/2] w-full rounded-2xl object-cover" />
+                <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{judge.fields.text}</h3>
+                <p className="text-base leading-7 text-gray-600">{judge.fields.description}</p>
+                <p className="mt-2 text-base leading-7 text-black-600">{judge.fields.lead}</p>
                 <ul role="list" className="mt-6 flex gap-x-6">
                   <li>
-                    <a href={person.xUrl} className="text-gray-400 hover:text-gray-500">
-                      <span className="sr-only">X</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
-                        <path d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500">
+                    <a href={judge.fields.url} className="text-gray-400 hover:text-gray-500">
                       <span className="sr-only">LinkedIn</span>
                       <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
                         <path

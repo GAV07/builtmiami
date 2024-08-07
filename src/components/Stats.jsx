@@ -3,7 +3,7 @@
   export default function Stats({ stats }) {
     return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-        <div className="absolute t-0 l-0 z-1 -mt-32 h-full w-full opacity-55 bg-black"/>
+        <div className="absolute t-0 l-0 z-1 sm:-mt-32 h-full w-full opacity-55 bg-black"/>
         <img
           alt=""
           src="/images/outing.jpg"

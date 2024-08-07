@@ -1,21 +1,10 @@
-const people = [
-    {
-      name: 'Leonard Krasner',
-      role: 'Senior Designer',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      xUrl: '#',
-      linkedinUrl: '#',
-    },
-    // More people...
-  ]
-  
-  export default function Founders() {
+
+  export default function Founders({founders}) {
     return (
       <div className="bg-gray-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our the finalists</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-6xl">Meet our the finalists</h2>
             <p className="mt-4 text-lg leading-8 text-gray-400">
               Out of 300+ participants, these are the top 8 finalists who will be pitching their ideas to the judges.
             </p>
@@ -24,22 +13,14 @@ const people = [
             role="list"
             className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
           >
-            {people.map((person) => (
-              <li key={person.name} className="rounded-2xl bg-gray-800 px-8 py-10">
-                <img alt="" src={person.imageUrl} className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" />
-                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
-                <p className="text-sm leading-6 text-gray-400">{person.role}</p>
+            {founders.map((founder) => (
+              <li key={founder.fields.lead} className="rounded-2xl bg-gray-800 px-8 py-10">
+                <img alt="" src={founder.fields.image.fields.file.url} className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" />
+                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{founder.name}</h3>
+                <p className="text-sm leading-6 text-gray-400">{founder.fields.text}</p>
                 <ul role="list" className="mt-6 flex justify-center gap-x-6">
                   <li>
-                    <a href={person.xUrl} className="text-gray-400 hover:text-gray-300">
-                      <span className="sr-only">X</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
-                        <path d="M11.4678 8.77491L17.2961 2H15.915L10.8543 7.88256L6.81232 2H2.15039L8.26263 10.8955L2.15039 18H3.53159L8.87581 11.7878L13.1444 18H17.8063L11.4675 8.77491H11.4678ZM9.57608 10.9738L8.95678 10.0881L4.02925 3.03974H6.15068L10.1273 8.72795L10.7466 9.61374L15.9156 17.0075H13.7942L9.57608 10.9742V10.9738Z" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-300">
+                    <a href={founder.url} className="text-gray-400 hover:text-gray-300">
                       <span className="sr-only">LinkedIn</span>
                       <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
                         <path

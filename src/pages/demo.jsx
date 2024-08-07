@@ -54,10 +54,10 @@ export default function Demo({ demo, logos, judges, founders, action }) {
         <Hero image={demo.fields.heroImage.fields.file.url}/>
 
         {/* Logos section */}
-        <Logos />
+        <Logos logos={logos}/>
 
         {/* Image section */}
-        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
+        <div className="xl:mx-auto xl:max-w-7xl xl:px-8">
           <img
             alt=""
             src={demo.fields.middleImage.fields.file.url}
@@ -66,10 +66,10 @@ export default function Demo({ demo, logos, judges, founders, action }) {
         </div>
 
         {/* Founders section */}
-        <Founders />
+        <Founders founders={founders}/>
 
         {/* Judges section */}
-        <Judges />
+        <Judges judges={judges}/>
 
         {/* CTA section */}
         <CTA action={action} />

@@ -1,62 +1,20 @@
-export default function Logos() {
+export default function Logos({logos}) {
     return (
-      <div className="bg-gray-900 py-24 sm:py-32">
+      <div className="bg-gray-900 py-10 sm:py-12">
+        <h1 className="text-white text-center text-6xl font-bold mb-10">Event Sponsors</h1>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
-            <div className="bg-white/5 p-8 sm:p-10">
-              <img
-                alt="Transistor"
-                src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
-            <div className="bg-white/5 p-6 sm:p-10">
-              <img
-                alt="Reform"
-                src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
-            <div className="bg-white/5 p-6 sm:p-10">
-              <img
-                alt="Tuple"
-                src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
-            <div className="bg-white/5 p-6 sm:p-10">
-              <img
-                alt="Laravel"
-                src="https://tailwindui.com/img/logos/158x48/laravel-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
-            <div className="bg-white/5 p-6 sm:p-10">
-              <img
-                alt="SavvyCal"
-                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
-            <div className="bg-white/5 p-6 sm:p-10">
-              <img
-                alt="Statamic"
-                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
-                width={158}
-                height={48}
-                className="max-h-12 w-full object-contain"
-              />
-            </div>
+            {logos.map((logo, i) => (
+                <div className="bg-slate-50 p-8 sm:p-10">
+                    <img
+                        alt="Logo"
+                        src={logo.fields.image.fields.file.url}
+                        width={158}
+                        height={48}
+                        className="max-h-12 w-full object-contain"
+                    />
+                </div>
+            ))}
           </div>
         </div>
       </div>
