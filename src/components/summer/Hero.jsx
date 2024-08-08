@@ -1,4 +1,5 @@
 import { Button } from '@/components/Button'
+import Image from 'next/image'
 
 export function Hero({ hero }) {
     return (
@@ -18,7 +19,7 @@ export function Hero({ hero }) {
                 </p>
                 <Button className="bg-indigo-600" href="https://airtable.com/shroe7sRtx7y2dZRa"> Sign Up to Build </Button>
               </div>
-              <img
+              <Image
                 src={hero.fields.image.fields.file.url}
                 alt=""
                 className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"

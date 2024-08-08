@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 export function Curriculum({ curriculum }) {
     return(
@@ -10,7 +11,7 @@ export function Curriculum({ curriculum }) {
             <p className="mt-6 text-xl leading-8 text-gray-600">
               {curriculum.fields.subtitle}
             </p>
-            <img
+            <Image
               src={curriculum.fields.image.fields.file.url}
               alt=""
               className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"

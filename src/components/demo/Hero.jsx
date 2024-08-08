@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Hero({image}) {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900">
@@ -47,7 +49,7 @@ export default function Hero({image}) {
               The Built in Miami program culminated in a Demo Day where the top startups from the program presented their startups to founders and funders across Miami.
               </p>
             </div>
-            <img
+            <Image
               alt="App screenshot"
               src={image}
               width={2000}

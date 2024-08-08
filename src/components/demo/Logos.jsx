@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Logos({logos}) {
     return (
       <div className="bg-gray-900 py-10 sm:py-12">
@@ -6,7 +8,7 @@ export default function Logos({logos}) {
           <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
             {logos.map((logo, i) => (
                 <div className="bg-slate-50 p-8 sm:p-10">
-                    <img
+                    <Image
                         alt="Logo"
                         src={logo.fields.image.fields.file.url}
                         width={158}

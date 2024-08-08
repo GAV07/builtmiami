@@ -2,7 +2,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { MARKS, BLOCKS } from '@contentful/rich-text-types';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-
+import Image from 'next/image'
 
 const renderOptions = {
   renderText: text => {
@@ -70,7 +70,7 @@ export function Mission({ mission }) {
                               key={stat.fields.text}
                           >
                           <div>
-                            <img src={stat.fields.image.fields.file.url} className={'h-[40vh] w-full w-[25vw] object-cover rounded-md pb-2'} />
+                            <Image src={stat.fields.image.fields.file.url} className={'h-[40vh] w-full w-[25vw] object-cover rounded-md pb-2'} />
                           </div>
                             <dd className="text-4xl font-semibold tracking-tight text-gray-900">{stat.fields.text}</dd>
                             <dt className="text-base leading-7 text-gray-600">{stat.fields.description}</dt>

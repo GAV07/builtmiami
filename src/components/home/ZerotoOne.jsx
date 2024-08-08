@@ -2,6 +2,7 @@ import { Container } from '@/components/home/Container'
 import { SectionHeading } from '@/components/home/SectionHeading'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export function ZerotoOne({ sprint }) {
   const ref = useRef(null);
@@ -85,7 +86,7 @@ export function ZerotoOne({ sprint }) {
             <div/*motion.li*/ /*variants={item}*/ key={card.fields.title} className="[counter-increment:card]">
               <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
-                  <img 
+                  <Image 
                     src={card.fields.image.fields.file.url}  
                   />
                 </div>

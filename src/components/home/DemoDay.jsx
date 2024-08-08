@@ -56,7 +56,7 @@ export function DemoDay({demoDay}) {
                     className="md:aspect-[1/1] sm:aspect-video aspect-[1/1]"
                     /*variants={item}*/
                 >
-                        <img src={demoDay.fields.image.fields.file.url}
+                        <Image src={demoDay.fields.image.fields.file.url}
                              className={'h-full w-full object-cover rounded-md'}/>
 
                 </div>

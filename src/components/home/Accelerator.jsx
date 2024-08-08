@@ -89,7 +89,7 @@ export function Accelerator({ accelerator }) {
                   variants={item}
               >
                 <div className="relative h-full w-full shadow-lg rounded-md overflow-hidden">
-                  <img src={resource.fields.image.fields.file.url} className={'absolute top-0 left-0 z-[1] h-full w-full object-cover rounded-md'} />
+                  <Image src={resource.fields.image.fields.file.url} className={'absolute top-0 left-0 z-[1] h-full w-full object-cover rounded-md'} />
                   <div className={'p-4 absolute top-0 left-0 z-[3] h-full w-full text-white flex flex-col justify-end items-start'}>
                     <h3 className="text-[56px] md:text-[56px] lg:text-[30px] font-medium tracking-tight leading-tight">
                       {resource.fields.title}

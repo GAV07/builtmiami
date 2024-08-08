@@ -6,7 +6,7 @@ import Hero from '@/components/demo/Hero'
 import Logos from '@/components/demo/Logos'
 import Founders from '@/components/demo/Founders'
 import { CTA } from '@/components/home/CTA'
-
+import Image from 'next/image'
 import { Client } from '@/lib/contentful'
 
 
@@ -58,7 +58,7 @@ export default function Demo({ demo, logos, judges, founders, action }) {
 
         {/* Image section */}
         <div className="xl:mx-auto xl:max-w-7xl xl:px-8">
-          <img
+          <Image
             alt=""
             src={demo.fields.middleImage.fields.file.url}
             className="aspect-[9/4] w-full object-cover xl:rounded-3xl"
