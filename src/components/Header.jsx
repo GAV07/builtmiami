@@ -130,7 +130,7 @@ export function Header() {
               />
             </a>
             <a
-              href="https://airtable.com/appwL7Iku8HiHU87A/shrEX73O6jtofCoRv"
+              href="https://airtable.com/appwL7Iku8HiHU87A/pag9921njt7sgXG0L/form"
               className="ml-auto rounded-md bg-[#3F47FF] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#3F47FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3F47FF]"
             >
               Apply Now
