@@ -65,12 +65,12 @@ export function Mission({ mission }) {
                       className="flex flex-col md:flex-row justify-between"
                   >
                     {mission.fields.callouts.map((stat, i) => (
-                        <div className="flex flex-col md:w-[24vw] content-between align-start">
+                        <div key={'image-'+i}  className="flex flex-col md:w-[24vw] content-between align-start">
                           <div 
                               key={stat.fields.text}
                           >
                           <div>
-                            <Image src={stat.fields.image.fields.file.url} className={'h-[40vh] w-full w-[25vw] object-cover rounded-md pb-2'} />
+                            <Image src={"https:" + stat.fields.image.fields.file.url} className={'h-[40vh] w-full w-[25vw] object-cover rounded-md pb-2'} width={500} height={500}/>
                           </div>
                             <dd className="text-4xl font-semibold tracking-tight text-gray-900">{stat.fields.text}</dd>
                             <dt className="text-base leading-7 text-gray-600">{stat.fields.description}</dt>

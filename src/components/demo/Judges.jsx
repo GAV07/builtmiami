@@ -29,7 +29,7 @@ const people = [
           >
             {judges.map((judge) => (
               <li key={judge.fields.text}>
-                <Image alt="" src={judge.fields.image.fields.file.url} className="aspect-[3/2] w-full rounded-2xl object-cover" />
+                <Image alt="" src={"https:" + judge.fields.image.fields.file.url} className="aspect-[3/2] w-full rounded-2xl object-cover" width={500} height={500} />
                 <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{judge.fields.text}</h3>
                 <p className="text-base leading-7 text-gray-600">{judge.fields.description}</p>
                 <p className="mt-2 text-base leading-7 text-black-600">{judge.fields.lead}</p>

@@ -57,7 +57,9 @@ export function DemoDay({demoDay}) {
                     /*variants={item}*/
                 >
                         <Image src={demoDay.fields.image.fields.file.url}
-                             className={'h-full w-full object-cover rounded-md'}/>
+                             className={'h-full w-full object-cover rounded-md'}
+                             width={500}
+                            height={500}/>
 
                 </div>
             </Container>

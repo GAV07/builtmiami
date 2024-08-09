@@ -9,6 +9,16 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 
 const withMDX = nextMDX({

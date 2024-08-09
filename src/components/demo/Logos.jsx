@@ -7,10 +7,10 @@ export default function Logos({logos}) {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
             {logos.map((logo, i) => (
-                <div className="bg-slate-50 p-8 sm:p-10">
+                <div key={'image-'+i} className="bg-slate-50 p-8 sm:p-10">
                     <Image
                         alt="Logo"
-                        src={logo.fields.image.fields.file.url}
+                        src={"https:" + logo.fields.image.fields.file.url}
                         width={158}
                         height={48}
                         className="max-h-12 w-full object-contain"

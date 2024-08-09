@@ -87,7 +87,9 @@ export function ZerotoOne({ sprint }) {
               <div>
                 <div className="flex overflow-hidden rounded shadow-sm">
                   <Image 
-                    src={card.fields.image.fields.file.url}  
+                    src={"https:" + card.fields.image.fields.file.url}  
+                    width={500}
+                    height={500}
                   />
                 </div>
               </div>

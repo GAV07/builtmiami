@@ -17,17 +17,7 @@ export function Header() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrentIndex(currentIndex => (currentIndex + 1) % phrases.length);
-      if (currentIndex === phrases.length - 1) {
-        setCurrentIndex(0);
-      }
-    }, 3000); // change the interval time as needed
-    setIntervalId(id);
-    return () => clearInterval(id);
-  }, []);
-
+  
   const list = {
     visible: {
       opacity: 1, 
@@ -37,7 +27,7 @@ export function Header() {
         staggerChildren: .3,
         delayChildren: 0.2
       }
-     },
+    },
     hidden: { opacity: 0, x: -100},
   }
   
@@ -48,7 +38,7 @@ export function Header() {
     },
     hidden: { opacity: 0, y: -100 },
   }
-
+  
   const phrases = [
     {id: 1, words: "A Startup Legacy", color: "#ff4500"},
     {id: 2, words: "An Amazing Team", color: "#ffd700"},
@@ -65,7 +55,18 @@ export function Header() {
     {id: 13, words: "A Clear Path", color: "#adff2f"},
     {id: 14, words: "A Solid Plan", color: "#00fa9a"},
     {id: 15, words: "A Winning Idea", color: "#ff4500"}
-];
+  ];
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex(currentIndex => (currentIndex + 1) % phrases.length);
+      if (currentIndex === phrases.length - 1) {
+        setCurrentIndex(0);
+      }
+    }, 3000); // change the interval time as needed
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, [currentIndex, phrases]);
 
   return (
     <header className="absolute w-full z-10 bg-gradient-to-b from-black to-transparent">
@@ -73,7 +74,7 @@ export function Header() {
         <div className="hidden lg:block flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Venture Miami - Built in Miami</span>
-            <Image className="h-auto w-[15vw]" src={pill} alt="" />
+            <Image className="h-auto w-[15vw]" src={pill} alt="" width={500} height={500} />
           </Link>
         </div>
         <div className="w-60 flex justify-left">
@@ -124,6 +125,8 @@ export function Header() {
                 className="h-8 w-auto"
                 src={pill}
                 alt=""
+                width={500}
+                height={500}
               />
             </a>
             <a

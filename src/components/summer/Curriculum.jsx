@@ -15,6 +15,8 @@ export function Curriculum({ curriculum }) {
               src={curriculum.fields.image.fields.file.url}
               alt=""
               className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
+              width={500}
+              height={500}
             />
           </div>
           <div className="w-full lg:max-w-xl lg:flex-wrap">

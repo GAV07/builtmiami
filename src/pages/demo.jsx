@@ -62,6 +62,8 @@ export default function Demo({ demo, logos, judges, founders, action }) {
             alt=""
             src={demo.fields.middleImage.fields.file.url}
             className="aspect-[9/4] w-full object-cover xl:rounded-3xl"
+            width={500}
+            height={500}
           />
         </div>
 
